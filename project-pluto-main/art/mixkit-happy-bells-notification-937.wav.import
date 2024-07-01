@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mixkit-happy-bells-notification-937.wav-621d6374a167c2788839e2d225bf5883.sample"
+
+[deps]
+
+source_file="res://art/mixkit-happy-bells-notification-937.wav"
+dest_files=[ "res://.import/mixkit-happy-bells-notification-937.wav-621d6374a167c2788839e2d225bf5883.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

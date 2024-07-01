@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sci-fi_explosion_1-42890.mp3-5d9b22a56b1bce24dddbccd8ff4320c0.mp3str"
+
+[deps]
+
+source_file="res://art/sci-fi_explosion_1-42890.mp3"
+dest_files=[ "res://.import/sci-fi_explosion_1-42890.mp3-5d9b22a56b1bce24dddbccd8ff4320c0.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

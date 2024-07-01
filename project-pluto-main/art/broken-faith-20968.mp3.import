@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/broken-faith-20968.mp3-182d9eaa7f5cf0c0cb6f9dc8c9c3885c.mp3str"
+
+[deps]
+
+source_file="res://art/broken-faith-20968.mp3"
+dest_files=[ "res://.import/broken-faith-20968.mp3-182d9eaa7f5cf0c0cb6f9dc8c9c3885c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

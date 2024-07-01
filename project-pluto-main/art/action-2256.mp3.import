@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/action-2256.mp3-97ed75d841360266c1e47146f4456f21.mp3str"
+
+[deps]
+
+source_file="res://art/action-2256.mp3"
+dest_files=[ "res://.import/action-2256.mp3-97ed75d841360266c1e47146f4456f21.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

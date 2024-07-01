@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/melodic-techno-03-extended-version-moogify-9867.mp3-d2ceba7e341b825d90f92e023fba3290.mp3str"
+
+[deps]
+
+source_file="res://art/melodic-techno-03-extended-version-moogify-9867.mp3"
+dest_files=[ "res://.import/melodic-techno-03-extended-version-moogify-9867.mp3-d2ceba7e341b825d90f92e023fba3290.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
