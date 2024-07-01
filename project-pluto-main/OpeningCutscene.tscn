@@ -1,0 +1,998 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://art/frame_1.png" type="Texture" id=1]
+[ext_resource path="res://art/frame_4.png" type="Texture" id=2]
+[ext_resource path="res://art/frame_7.png" type="Texture" id=3]
+[ext_resource path="res://art/frame_2.png" type="Texture" id=4]
+[ext_resource path="res://art/frame_5 (1).png" type="Texture" id=5]
+[ext_resource path="res://art/frame_6 (1).png" type="Texture" id=6]
+[ext_resource path="res://art/frame_3.png" type="Texture" id=7]
+[ext_resource path="res://OpeningCutscene.gd" type="Script" id=8]
+[ext_resource path="res://art/Poco.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://art/broken-faith-20968.mp3" type="AudioStream" id=10]
+[ext_resource path="res://art/8-bit-game-music-122259.mp3" type="AudioStream" id=11]
+[ext_resource path="res://art/melodic-techno-03-extended-version-moogify-9867.mp3" type="AudioStream" id=12]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 53
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "New Anim"
+length = 37.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("frame_1:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("frame_2:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("frame_3:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("frame_4:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("frame_5:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("frame_6:texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("frame_7:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("frame_1:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1, 5 ),
+"transitions": PoolRealArray( 1, -2 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("frame_2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 5, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("frame_3:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 10, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("frame_4:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 15, 20 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("frame_5:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 20, 25 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("frame_6:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 25, 31.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("frame_7:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 31.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ColorRect2:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("ColorRect2:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 2, 4.6, 4.9, 5, 5.4, 9.2, 10, 10.5, 14.1, 15.2, 15.6, 19.3, 20, 20.3, 24, 24.6, 25, 25.2, 30.6, 31.1, 31.4, 31.5, 35.5, 37 ),
+"transitions": PoolRealArray( 1, 1, 0.594603, 1, 1, 0.258816, 0.189465, 1, 0.297302, 0.225313, 1, 0.225313, 0.203063, 1, 0.258816, 0.287175, 1, 1, 0.203063, 0.31864, 1, 1, 0.210224, 0.210224, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("ColorRect2:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 4.6, 5.4, 9.2, 10.5, 14.1, 15.6, 19.3, 20.3, 24, 25.2, 30.5, 31.5, 35.5 ),
+"transitions": PoolRealArray( 1, 0.210224, 1, 0.297302, 0.267946, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("MarginContainer:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("MarginContainer/HBoxContainer/Label:text")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 1, 3.8, 4.4, 5, 5.7, 8.5, 9, 9.5, 10.5, 13.3, 13.8, 14.3, 15, 18.4, 18.9, 19.4, 20, 23, 23.6, 24.2, 25, 26.3, 26.8, 27.2, 27.8, 29.7, 30.1, 30.6, 31.4, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "For me, it's always been a bit difficult to make friends. ", "For me, it's always been a bit difficult to make friends. ", "For me, it's always been a bit difficult to make friends. ", "For me, it's always been a bit difficult to make friends. ", "But inventing has helped me feel really happy, and less lonely!", "But inventing has helped me feel really happy, and less lonely!", "But inventing has helped me feel really happy, and less lonely!", "But inventing has helped me feel really happy, and less lonely!", "In fact, my best friend is my greatest invention. His name is Pluto and he's a robo-pup!", "In fact, my best friend is my greatest invention. His name is Pluto and he's a robo-pup!", "In fact, my best friend is my greatest invention. His name is Pluto and he's a robo-pup!", "In fact, my best friend is my greatest invention. His name is Pluto and he's a robo-pup!", "But one day I came home from school and Pluto was nowhere to be found", "But one day I came home from school and Pluto was nowhere to be found", "But one day I came home from school and Pluto was nowhere to be found", "But one day I came home from school and Pluto was nowhere to be found", "When I went outside to look for him I found a suspicious looking box on my doorstep", "When I went outside to look for him I found a suspicious looking box on my doorstep", "When I went outside to look for him I found a suspicious looking box on my doorstep", "When I went outside to look for him I found a suspicious looking box on my doorstep", "The evil corporation Malitech had kidnapped Pluto!", "The evil corporation Malitech had kidnapped Pluto!", "The evil corporation Malitech had kidnapped Pluto!", "The evil corporation Malitech had kidnapped Pluto!", "Their intent: exploit Pluto's underlying tech to gain billions.", "Their intent: exploit Pluto's underlying tech to gain billions.", "Their intent: exploit Pluto's underlying tech to gain billions.", "Their intent: exploit Pluto's underlying tech to gain billions.", "I know where their HQ is. Let's go now and rescue Pluto!", "I know where their HQ is. Let's go now and rescue Pluto!" ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("MarginContainer/HBoxContainer/Label:percent_visible")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 1, 3.8, 4.4, 5, 5.7, 8.5, 9, 9.5, 10.5, 13.3, 13.8, 14.3, 15, 18.4, 18.9, 19.4, 20, 23, 23.6, 24.2, 25, 26.3, 26.8, 27.2, 27.8, 29.7, 30.1, 30.6, 31.4, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 0.999997, 0.999997, 0.999997, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("frame_2:frame")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 5, 6.2, 7.4, 8.9, 9.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0, 1 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("frame_3:frame")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 10.7, 11.5, 12.4, 13, 13.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1, 0, 1 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("frame_4:frame")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 16, 17.5, 18.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 0, 1 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("frame_5:frame")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 20, 23.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 1, 5, 5.7, 9.5, 10.5, 14.3, 15, 19.4, 20, 24.2, 25, 27.2, 27.8, 30.6, 31.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true, false, true ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("MarginContainer/HBoxContainer/Label:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 1, 1.1, 5, 5.7, 9.5, 10.5, 14.3, 15, 19.4, 20, 24.2, 25, 30.6, 31.4, 35 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.34902, 0.815686, 0.905882, 1 ), Color( 0.0941176, 0.639216, 1, 1 ), Color( 0.241939, 0.570104, 0.872016, 1 ), Color( 0.976471, 1, 0.258824, 1 ), Color( 0.981103, 0.845576, 0.25033, 1 ), Color( 0.988235, 0.988235, 0.988235, 1 ), Color( 1, 1, 1, 1 ), Color( 0.152941, 1, 1, 1 ), Color( 0.152941, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.215686, 0.215686, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0.819608, 0, 1 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("sad:volume_db")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0.7, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.049, 5.049 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("sad:pitch_scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("sad:playing")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 0.7, 5, 15.3, 19.7 ),
+"transitions": PoolRealArray( 1, 1, 0.34151, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("sad:stream")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("happy:stream")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 5.3, 15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 11 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("happy:playing")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0, 5.3, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("action:playing")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0, 20, 24.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/33/type = "audio"
+tracks/33/path = NodePath("action")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 69.0,
+"stream": ExtResource( 12 )
+} ],
+"times": PoolRealArray( 24.5 )
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("frame_1:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("frame_2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("frame_3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("frame_4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("frame_5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("frame_6:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("frame_7:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("ColorRect2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ColorRect2:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("frame_2:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("MarginContainer/HBoxContainer/Label:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("MarginContainer:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("MarginContainer/HBoxContainer/Label:percent_visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("MarginContainer/HBoxContainer/Label:margin_left")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 30.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("MarginContainer/HBoxContainer/Label:text")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Inventing helped me to feel happy, and not so lonely!" ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("MarginContainer/HBoxContainer/Label:custom_fonts/font:size")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 53 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("MarginContainer/HBoxContainer:margin_left")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 24.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("frame_3:frame")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("frame_4:frame")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("frame_5:frame")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("MarginContainer/HBoxContainer/Label:size_flags_horizontal")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("MarginContainer/HBoxContainer/Label:size_flags_vertical")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("MarginContainer/Panel:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("MarginContainer/HBoxContainer/Label:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.215686, 0.215686, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("sad:volume_db")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 5.049 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("sad:pitch_scale")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("sad:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("sad:stream")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("happy:stream")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("happy:playing")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("action:playing")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("ColorRect2:color")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "fade in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="DynamicFont" id=8]
+size = 40
+outline_size = 2
+outline_color = Color( 0.858824, 0.356863, 0.847059, 1 )
+extra_spacing_top = -18
+extra_spacing_char = 2
+font_data = ExtResource( 9 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1290.0
+margin_bottom = 730.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="frame_1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 675, 360 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 1 )
+
+[node name="frame_2" type="Sprite" parent="."]
+position = Vector2( 675, 360 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 4 )
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="frame_3" type="Sprite" parent="."]
+position = Vector2( 675, 360 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 7 )
+vframes = 2
+
+[node name="frame_4" type="Sprite" parent="."]
+position = Vector2( 652.875, 333 )
+scale = Vector2( 0.2025, 0.190462 )
+texture = ExtResource( 2 )
+vframes = 2
+frame = 1
+
+[node name="frame_5" type="Sprite" parent="."]
+position = Vector2( 675, 362 )
+scale = Vector2( 0.95, 0.9 )
+texture = ExtResource( 5 )
+vframes = 2
+
+[node name="frame_6" type="Sprite" parent="."]
+position = Vector2( 675, 360 )
+scale = Vector2( 0.96, 0.9 )
+texture = ExtResource( 6 )
+
+[node name="frame_7" type="Sprite" parent="."]
+position = Vector2( 675, 360 )
+scale = Vector2( 0.96, 0.9 )
+texture = ExtResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
+margin_left = 59.0
+margin_top = 569.0
+margin_right = 1232.0
+margin_bottom = 717.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+margin_right = 1173.0
+margin_bottom = 148.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 24.0
+margin_right = 1173.0
+margin_bottom = 148.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+visible = false
+modulate = Color( 1, 0.215686, 0.215686, 1 )
+margin_left = 30.0
+margin_right = 1173.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 6 )
+text = "Inventing helped me to feel happy, and not so lonely!"
+align = 1
+autowrap = true
+percent_visible = 0.0
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 1291.0
+margin_bottom = 729.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+margin_left = 42.0
+margin_top = 541.0
+margin_right = 1241.0
+margin_bottom = 702.0
+theme = SubResource( 3 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+visible = false
+margin_left = 42.0
+margin_top = 541.0
+margin_right = 1241.0
+margin_bottom = 702.0
+theme = SubResource( 3 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 1 )
+anims/RESET = SubResource( 2 )
+"anims/fade in" = SubResource( 7 )
+
+[node name="action" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="happy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="sad" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = 5.049
+
+[node name="SkipButton" type="Button" parent="."]
+margin_left = 1139.0
+margin_top = 13.0
+margin_right = 1264.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 8 )
+text = "SKIP"
+
+[connection signal="pressed" from="SkipButton" to="." method="_on_SkipButton_pressed"]

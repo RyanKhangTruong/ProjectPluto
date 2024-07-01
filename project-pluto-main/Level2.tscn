@@ -1,0 +1,382 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://art/Heart_Empty.png" type="Texture" id=1]
+[ext_resource path="res://art/Heart_Full.png" type="Texture" id=2]
+[ext_resource path="res://HUD.gd" type="Script" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Edge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/Level2.2.png" type="Texture" id=6]
+[ext_resource path="res://Blue_Platform.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Spawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level2.gd" type="Script" id=9]
+[ext_resource path="res://art/lv2music.mp3" type="AudioStream" id=10]
+[ext_resource path="res://art/mixkit-happy-bells-notification-937.wav" type="AudioStream" id=11]
+[ext_resource path="res://art/movetolv3frame1.png" type="Texture" id=12]
+[ext_resource path="res://art/movetolv3frame3.png" type="Texture" id=13]
+[ext_resource path="res://art/movetolv3frame2.png" type="Texture" id=14]
+[ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://art/Poco.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://art/powerups/triple_shot_powerup (2).png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 16 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 14 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 16 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 16 )
+
+[node name="Level2" type="Node"]
+script = ExtResource( 9 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 855, 365 )
+texture = ExtResource( 6 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="HeartsEmpty" type="TextureRect" parent="HUD"]
+margin_right = 256.0
+margin_bottom = 203.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="HeartsFull" type="TextureRect" parent="HUD"]
+margin_right = 243.0
+margin_bottom = 211.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="EnemyCounter" type="Label" parent="HUD"]
+margin_left = 444.0
+margin_top = 4.0
+margin_right = 839.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Enemies Remaining: ##"
+align = 1
+
+[node name="TripleUp" type="TextureRect" parent="HUD"]
+visible = false
+margin_left = 894.0
+margin_top = -17.0
+margin_right = 1144.0
+margin_bottom = 233.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="LeftWall" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( -30, 289 )
+rotation = 1.5708
+scale = Vector2( 4, 1.25 )
+
+[node name="RightWall" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 1310, 289 )
+rotation = 1.5708
+scale = Vector2( 4, 1.25 )
+
+[node name="Platform1" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 105, 700 )
+
+[node name="Platform2" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 320, 700 )
+
+[node name="Platform3" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 535, 700 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 750, 700 )
+
+[node name="Platform5" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 965, 700 )
+
+[node name="Platform6" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 1180, 700 )
+
+[node name="Platform7" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 320, 525 )
+
+[node name="Platform8" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 750, 525 )
+
+[node name="Platform9" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 1180, 525 )
+
+[node name="Platform10" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 105, 350 )
+
+[node name="Platform11" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 535, 350 )
+
+[node name="Platform12" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 965, 350 )
+
+[node name="Platform13" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 320, 175 )
+
+[node name="Platform14" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 750, 175 )
+
+[node name="Platform15" parent="Platforms" instance=ExtResource( 7 )]
+position = Vector2( 1180, 175 )
+
+[node name="Edges" type="Node" parent="."]
+
+[node name="Edge1" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 11, 666 )
+
+[node name="Edge2" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1270, 666 )
+
+[node name="Edge3" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 218, 491 )
+
+[node name="Edge4" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 422, 491 )
+
+[node name="Edge5" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 648, 491 )
+
+[node name="Edge6" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 852, 491 )
+
+[node name="Edge7" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1078, 491 )
+
+[node name="Edge8" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1270, 491 )
+
+[node name="Edge9" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 11, 316 )
+
+[node name="Edge10" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 207, 316 )
+
+[node name="Edge11" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 433, 316 )
+
+[node name="Edge12" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 637, 316 )
+
+[node name="Edge13" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 863, 316 )
+
+[node name="Edge14" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1067, 316 )
+
+[node name="Edge15" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 218, 141 )
+
+[node name="Edge16" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 422, 141 )
+
+[node name="Edge17" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 648, 141 )
+
+[node name="Edge18" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 852, 141 )
+
+[node name="Edge19" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1078, 141 )
+
+[node name="Edge20" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1270, 141 )
+
+[node name="Edge21" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 50, 260 )
+
+[node name="Edge22" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1230, 260 )
+
+[node name="Edge23" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 50, 435 )
+
+[node name="Edge24" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1230, 435 )
+
+[node name="Spawners" type="Node" parent="."]
+
+[node name="SpawnerA1" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 105, 613 )
+
+[node name="SpawnerA2" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 1180, 613 )
+
+[node name="SpawnerA3" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 320, 438 )
+
+[node name="SpawnerA4" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 750, 438 )
+
+[node name="SpawnerA5" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 1180, 438 )
+
+[node name="SpawnerA6" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 105, 263 )
+
+[node name="SpawnerA7" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 535, 263 )
+
+[node name="SpawnerA8" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 965, 266 )
+
+[node name="SpawnerA9" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 320, 88 )
+
+[node name="SpawnerA11" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 750, 88 )
+
+[node name="SpawnerA10" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 8 )]
+position = Vector2( 1180, 88 )
+
+[node name="SpawnerB1" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 105, 610 )
+
+[node name="SpawnerB2" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 1180, 613 )
+
+[node name="SpawnerB3" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 320, 435 )
+
+[node name="SpawnerB4" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 750, 435 )
+
+[node name="SpawnerB5" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 535, 260 )
+
+[node name="SpawnerB6" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 965, 260 )
+
+[node name="SpawnerB7" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 320, 85 )
+
+[node name="SpawnerB8" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 750, 85 )
+
+[node name="SpawnerB9" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 8 )]
+position = Vector2( 1180, 85 )
+
+[node name="SpawnerT1" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 152, 247 )
+
+[node name="SpawnerT2" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 1028, 590 )
+
+[node name="SpawnerT3" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 235, 593 )
+
+[node name="SpawnerT4" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 1182, 67 )
+
+[node name="SpawnerT5" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 963, 250 )
+
+[node name="SpawnerT6" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 534, 237 )
+
+[node name="SpawnerT7" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 8 )]
+position = Vector2( 320, 63 )
+
+[node name="SpawnerC1" parent="Spawners" groups=["Spawn_C"] instance=ExtResource( 8 )]
+position = Vector2( 640, 260 )
+
+[node name="SpawnerC2" parent="Spawners" groups=["Spawn_C"] instance=ExtResource( 8 )]
+position = Vector2( 640, 435 )
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="PlayerDeathTimer" type="Timer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 650 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="LevelMusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="bells" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="MovingToLevel3" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="transition" type="AnimatedSprite" parent="MovingToLevel3"]
+position = Vector2( 639.5, 358.5 )
+scale = Vector2( 1.00391, 1.00972 )
+frames = SubResource( 1 )
+
+[node name="PauseScreen" parent="." instance=ExtResource( 15 )]
+position = Vector2( -37, 2 )
+z_index = 4
+
+[node name="PauseButton" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="PauseButton" type="Button" parent="PauseButton"]
+margin_left = 1090.0
+margin_top = 11.0
+margin_right = 1262.0
+margin_bottom = 67.0
+
+[node name="Label" type="Label" parent="PauseButton/PauseButton"]
+margin_left = 35.0
+margin_top = -6.0
+margin_right = 135.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 2 )
+text = "Pause"
+
+[node name="UnpauseButton" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="UnpauseButton" type="Button" parent="UnpauseButton"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -173.0
+margin_top = 11.0
+margin_right = 182.0
+margin_bottom = 72.0
+
+[node name="Label" type="Label" parent="UnpauseButton/UnpauseButton"]
+margin_left = 22.0
+margin_top = -5.0
+margin_right = 170.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 3 )
+text = "Back to Gameplay!"
+
+[node name="MiniBossSpawn" type="Position2D" parent="."]
+position = Vector2( 535, 220 )
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="PlayerDeathTimer" to="." method="_on_PlayerDeathTimer_timeout"]
+[connection signal="dying" from="Player" to="." method="_on_Player_dying"]
+[connection signal="pressed" from="PauseButton/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="UnpauseButton/UnpauseButton" to="." method="_on_UnpauseButton_pressed"]

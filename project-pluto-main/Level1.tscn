@@ -1,0 +1,329 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://art/Heart_Empty.png" type="Texture" id=1]
+[ext_resource path="res://art/Heart_Full.png" type="Texture" id=2]
+[ext_resource path="res://HUD.gd" type="Script" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Edge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/Level1.2.png" type="Texture" id=6]
+[ext_resource path="res://Spawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Red_Platform.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Level1.gd" type="Script" id=9]
+[ext_resource path="res://art/Level1Music.mp3" type="AudioStream" id=10]
+[ext_resource path="res://art/movetolv2frame2.png" type="Texture" id=11]
+[ext_resource path="res://art/movetolv2frame1.png" type="Texture" id=12]
+[ext_resource path="res://art/movetolv2frame3.png" type="Texture" id=13]
+[ext_resource path="res://art/mixkit-happy-bells-notification-937.wav" type="AudioStream" id=14]
+[ext_resource path="res://PauseScreen.tscn" type="PackedScene" id=15]
+[ext_resource path="res://art/Poco.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://art/powerups/triple_shot_powerup (2).png" type="Texture" id=17]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 16 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": false,
+"name": "default",
+"speed": 1.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 16 )
+
+[node name="Level1" type="Node"]
+script = ExtResource( 9 )
+
+[node name="LevelMusic1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 855, 365 )
+texture = ExtResource( 6 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 3 )
+
+[node name="HeartsEmpty" type="TextureRect" parent="HUD"]
+margin_right = 256.0
+margin_bottom = 203.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 2
+
+[node name="HeartsFull" type="TextureRect" parent="HUD"]
+margin_right = 243.0
+margin_bottom = 211.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+
+[node name="EnemyCounter" type="Label" parent="HUD"]
+margin_left = 442.0
+margin_top = 2.0
+margin_right = 830.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 3 )
+text = "Enemies Remaining: ##"
+align = 1
+
+[node name="TripleUp" type="TextureRect" parent="HUD"]
+visible = false
+margin_left = 894.0
+margin_top = -18.0
+margin_right = 1144.0
+margin_bottom = 232.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+stretch_mode = 1
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="LeftWall" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( -29, 289 )
+rotation = 1.5708
+scale = Vector2( 4, 1.25 )
+
+[node name="RightWall" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 1312, 289 )
+rotation = 1.5708
+scale = Vector2( 4, 1.25 )
+
+[node name="Platform1" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 105, 700 )
+
+[node name="Platform2" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 320, 700 )
+
+[node name="Platform3" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 535, 700 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 750, 700 )
+
+[node name="Platform5" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 965, 700 )
+
+[node name="Platform6" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 1180, 700 )
+
+[node name="Platform7" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 320, 525 )
+
+[node name="Platform8" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 965, 525 )
+
+[node name="Platform9" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 535, 350 )
+
+[node name="Platform10" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 750, 350 )
+
+[node name="Platform11" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 105, 175 )
+
+[node name="Platform12" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 320, 175 )
+
+[node name="Platform13" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 965, 175 )
+
+[node name="Platform14" parent="Platforms" instance=ExtResource( 8 )]
+position = Vector2( 1180, 175 )
+
+[node name="Edges" type="Node" parent="."]
+
+[node name="Edge1" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 11, 666 )
+
+[node name="Edge2" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1270, 666 )
+
+[node name="Edge3" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 214, 491 )
+
+[node name="Edge4" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 418, 491 )
+
+[node name="Edge5" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 859, 491 )
+
+[node name="Edge6" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1063, 491 )
+
+[node name="Edge7" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 429, 316 )
+
+[node name="Edge8" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 848, 316 )
+
+[node name="Edge9" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 11, 141 )
+
+[node name="Edge10" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 418, 141 )
+
+[node name="Edge11" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 859, 141 )
+
+[node name="Edge12" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1270, 141 )
+
+[node name="Edge13" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 50, 250 )
+
+[node name="Edge14" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1230, 250 )
+
+[node name="Edge15" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 50, 60 )
+
+[node name="Edge16" parent="Edges" instance=ExtResource( 5 )]
+position = Vector2( 1230, 60 )
+
+[node name="Spawners" type="Node" parent="."]
+
+[node name="SpawnerA1" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 105, 613 )
+
+[node name="SpawnerA2" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 1180, 613 )
+
+[node name="SpawnerA3" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 320, 438 )
+
+[node name="SpawnerA4" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 965, 438 )
+
+[node name="SpawnerA5" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 640, 263 )
+
+[node name="SpawnerA6" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 105, 88 )
+
+[node name="SpawnerA7" parent="Spawners" groups=["Spawn_A"] instance=ExtResource( 7 )]
+position = Vector2( 1180, 88 )
+
+[node name="SpawnerB1" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 7 )]
+position = Vector2( 105, 610 )
+
+[node name="SpawnerB2" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 7 )]
+position = Vector2( 1180, 613 )
+
+[node name="SpawnerB3" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 7 )]
+position = Vector2( 640, 260 )
+
+[node name="SpawnerB4" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 7 )]
+position = Vector2( 105, 85 )
+
+[node name="SpawnerB5" parent="Spawners" groups=["Spawn_B"] instance=ExtResource( 7 )]
+position = Vector2( 1180, 85 )
+
+[node name="SpawnerC1" parent="Spawners" groups=["Spawn_C"] instance=ExtResource( 7 )]
+position = Vector2( 640, 260 )
+
+[node name="SpawnerC2" parent="Spawners" groups=["Spawn_C"] instance=ExtResource( 7 )]
+position = Vector2( 640, 70 )
+
+[node name="SpawnerT1" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 1039, 607 )
+
+[node name="SpawnerT2" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 209, 69 )
+
+[node name="SpawnerT3" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 1059, 75 )
+
+[node name="SpawnerT4" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 964, 416 )
+
+[node name="SpawnerT5" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 530, 250 )
+
+[node name="SpawnerT6" parent="Spawners" groups=["Spawn_triple"] instance=ExtResource( 7 )]
+position = Vector2( 292, 597 )
+
+[node name="PauseScreen" parent="." instance=ExtResource( 15 )]
+position = Vector2( -40, 0 )
+z_index = 4
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="PlayerDeathTimer" type="Timer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 640, 640 )
+scale = Vector2( 0.2, 0.2 )
+
+[node name="MovingToLevel2" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="transition" type="AnimatedSprite" parent="MovingToLevel2"]
+position = Vector2( 638, 357 )
+scale = Vector2( 1.00469, 1.00278 )
+frames = SubResource( 1 )
+
+[node name="bells" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="PauseButton" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="PauseButton" type="Button" parent="PauseButton"]
+margin_left = 1086.0
+margin_top = 13.0
+margin_right = 1258.0
+margin_bottom = 69.0
+
+[node name="Label" type="Label" parent="PauseButton/PauseButton"]
+margin_left = 35.0
+margin_top = -7.0
+margin_right = 155.0
+margin_bottom = 41.0
+custom_fonts/font = SubResource( 2 )
+text = "Pause "
+align = 1
+valign = 1
+
+[node name="UnpauseButton" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="UnpauseButton" type="Button" parent="UnpauseButton"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -170.0
+margin_top = 10.0
+margin_right = 182.0
+margin_bottom = 73.0
+action_mode = 0
+
+[node name="Label" type="Label" parent="UnpauseButton/UnpauseButton"]
+margin_left = 17.0
+margin_top = -4.0
+margin_right = 107.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 2 )
+text = "Back to Gameplay!"
+
+[node name="MiniBossSpawn" type="Position2D" parent="."]
+position = Vector2( 640, 220 )
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="PlayerDeathTimer" to="." method="_on_PlayerDeathTimer_timeout"]
+[connection signal="dying" from="Player" to="." method="_on_Player_dying"]
+[connection signal="pressed" from="PauseButton/PauseButton" to="." method="_on_PauseButton_pressed"]
+[connection signal="pressed" from="UnpauseButton/UnpauseButton" to="." method="_on_UnpauseButton_pressed"]

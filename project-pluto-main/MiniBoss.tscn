@@ -1,0 +1,155 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://MiniBoss.gd" type="Script" id=2]
+[ext_resource path="res://Stats.tscn" type="PackedScene" id=3]
+[ext_resource path="res://art/sci-fi_explosion_1-42890.mp3" type="AudioStream" id=5]
+[ext_resource path="res://art/boss_bullet_sound.wav" type="AudioStream" id=6]
+[ext_resource path="res://art/machine_gunner_idle _shooting_active_best.png" type="Texture" id=7]
+[ext_resource path="res://art/Explosion Frames.png" type="Texture" id=8]
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 248, 263 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 7 )
+region = Rect2( 248, 0, 248, 263 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 263, 248, 263 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 7 )
+region = Rect2( 248, 263, 248, 263 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 4.0
+} ]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 0, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 8 )
+region = Rect2( 768, 0, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 384, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 384, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 8 )
+region = Rect2( 768, 384, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 768, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 8 )
+region = Rect2( 384, 768, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 8 )
+region = Rect2( 768, 768, 384, 384 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 1152, 384, 384 )
+
+[sub_resource type="SpriteFrames" id=41]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
+"loop": true,
+"name": "explosion",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 72, 278.5 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0.933333, 0.521569, 0.247059, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.8, 0.8, 0.8, 0 )
+
+[sub_resource type="Theme" id=14]
+ProgressBar/colors/font_color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = SubResource( 25 )
+ProgressBar/styles/fg = SubResource( 26 )
+
+[node name="MiniBoss" type="Area2D" groups=["Enemy"]]
+scale = Vector2( 0.35, 0.35 )
+script = ExtResource( 2 )
+
+[node name="Animation" type="AnimatedSprite" parent="."]
+scale = Vector2( 2.33, 2.33 )
+frames = SubResource( 5 )
+animation = "shoot"
+frame = 1
+playing = true
+
+[node name="Explosion" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
+frames = SubResource( 41 )
+animation = "explosion"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 26.5 )
+shape = SubResource( 6 )
+
+[node name="ShootPause" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="GunLocation" type="Position2D" parent="."]
+
+[node name="BossStats" parent="." instance=ExtResource( 3 )]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -31.0
+margin_top = -68.0
+margin_right = 32.0
+margin_bottom = -52.0
+theme = SubResource( 14 )
+value = 50.0
+percent_visible = false
+
+[node name="ExplodeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[connection signal="timeout" from="ShootPause" to="." method="_on_ShootPause_timeout"]

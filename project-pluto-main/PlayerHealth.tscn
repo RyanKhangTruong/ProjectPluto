@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://HeartState.gd" type="Script" id=1]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+mode = null
+
+[node name="1" type="TextureRect" parent="."]
+margin_bottom = 40.0
+
+[node name="2" type="TextureRect" parent="."]
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 40.0
+
+[node name="3" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_right = 8.0
+margin_bottom = 40.0
